@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -81,7 +81,7 @@
 <!-- SERVICES -->
 <section id="services" class="services">
   <div class="services-band">
-    <h2 class="section-title">What I Create with AI</h2>
+    <h2 class="section-title light">What I Create with AI</h2>
     <p class="center sub-light">From scripts to finished assets — built for teams that need quality content, fast.</p>
   </div>
   <div class="wrap service-grid">
@@ -123,7 +123,7 @@
   </div>
 
   <div class="work-block">
-    <div class="work-title"><h3>Short-Form &amp; <span class="ai">AI</span>-Generated Videos</h3><span class="tag">Veo · Kling · Seedance · Canva</span></div>
+    <div class="work-title"><h3>Short-Form &amp; <span class="ai">AI</span>-Generated Videos</h3><span class="tag">Premiere Pro · Veo · Google Flow</span></div>
     <div class="grid g4">
       <figure class="media r916"><video src="assets/video/short-1.mp4?v=2" poster="assets/img/short-1-poster.jpg?v=2" preload="none" playsinline></video><button class="play" aria-label="Play video"></button></figure>
       <figure class="media r916"><video src="assets/video/short-2.mp4?v=2" poster="assets/img/short-2-poster.jpg?v=2" preload="none" playsinline></video><button class="play" aria-label="Play video"></button></figure>
@@ -151,7 +151,7 @@
   </div>
 
   <div class="work-block">
-    <div class="work-title"><h3>Website Design</h3><span class="tag">E-commerce · Landing pages</span></div>
+    <div class="work-title"><h3>Website Design</h3><span class="tag">Canva · Landing pages</span></div>
     <div class="browser">
       <div class="browser-bar"><i></i><i></i><i></i></div>
       <div class="slider" aria-roledescription="carousel" aria-label="Maria Nicola website design">
@@ -313,6 +313,12 @@
     });
     video.addEventListener("play", () => btn.hidden = true);
   });
+
+  // Pause any video that scrolls out of view; it stays paused when scrolled back
+  const offscreen = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (!e.isIntersecting && !e.target.paused) e.target.pause(); });
+  }, { threshold: 0.25 });
+  document.querySelectorAll(".media video").forEach((v) => offscreen.observe(v));
 
   // Website slideshow: arrows, dots, and left/right swipe
   document.querySelectorAll(".slider").forEach((slider) => {

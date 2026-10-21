@@ -215,7 +215,7 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
 .slide-arrow.next { right: 12px; }
 .slide-arrow.next::before { transform: translateX(-3px) rotate(45deg); }
 .slide-dots { position: absolute; left: 0; right: 0; bottom: 16px; display: flex; justify-content: center; gap: 10px; }
-.slide-dots button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; background: #c9ced8; transition: background .2s, transform .2s; }
+.slide-dots button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; background: #4b5563; transition: background .2s, transform .2s; }
 .slide-dots button.active { background: var(--blue); transform: scale(1.2); }
 .browser { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 30px 60px -30px rgba(1,4,64,.3); }
 .browser-bar { display: flex; gap: 8px; padding: 14px 18px; background: var(--bg); }
@@ -261,14 +261,17 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
 /* About */
 .about { padding: 112px 0; }
 .about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 72px; align-items: center; }
-.portrait { border-radius: 28px; box-shadow: 24px 24px 0 var(--sky); background: var(--white); border: 1px solid var(--line); }
+/* Offset block behind the photo uses the same blue-to-navy gradient as the hero and contact card */
+.about-card { position: relative; }
+.about-card::before { content: ""; position: absolute; inset: 24px -24px -24px 24px; border-radius: 28px; background: linear-gradient(160deg, var(--blue), var(--navy)); }
+.portrait { position: relative; border-radius: 28px; background: var(--white); border: 1px solid var(--line); box-shadow: none; }
 .about-copy h3 { font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -.6px; margin-bottom: 20px; }
 .about-copy p { color: var(--muted); margin-bottom: 16px; font-size: 16.5px; }
 .ticks { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
 .ticks li { position: relative; padding-left: 30px; font-weight: 500; font-size: 15px; }
 .ticks li::before {
   content: ""; position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border-radius: 50%;
-  background: var(--blue) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12.5l4 4 8-9"/></svg>') center / 12px no-repeat;
+  background: var(--orange) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12.5l4 4 8-9"/></svg>') center / 12px no-repeat;
 }
 
 /* Contact */
