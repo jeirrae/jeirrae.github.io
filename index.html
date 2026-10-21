@@ -9,19 +9,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
 <!-- NAV -->
 <header class="nav wrap">
   <a href="#" class="logo">jr<span class="dot">.</span></a>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#work">Work</a>
-    <a href="#tools">Tools</a>
-    <a href="#about">About</a>
-  </nav>
+  <span class="nav-title">Creative Portfolio</span>
   <div class="menu">
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel"><span></span><span></span><span></span></button>
     <div class="menu-panel" id="menu-panel" hidden>
@@ -74,7 +69,7 @@
 <section class="brands wrap">
   <h2 class="center">Brands I've worked with</h2>
   <div class="brand-row">
-    <img src="assets/logos/flatstacks.png?v=2" alt="Flat Stacks" style="--h:40px">
+    <img src="assets/logos/flatstacks.png?v=2" alt="Flat Stacks" style="--h:34px">
     <img src="assets/logos/marianicola.png" alt="Maria Nicola" style="--h:33px">
     <img src="assets/logos/paloma.png" alt="Paloma Living" style="--h:17px">
     <img src="assets/logos/mpe.png" alt="My Property Empire" style="--h:30px">
@@ -157,10 +152,19 @@
 
   <div class="work-block">
     <div class="work-title"><h3>Website Design</h3><span class="tag">E-commerce · Landing pages</span></div>
-    <a class="browser" href="https://www.canva.com/design/DAHF5aY2JXw/DdX00VxQZfAhKGGbzdZoFA/view" target="_blank" rel="noopener">
-      <div class="browser-bar"><i></i><i></i><i></i><span class="view-link">View full design ↗</span></div>
-      <figure class="media r169 flat"><img src="assets/img/website-1.jpg" alt="Homepage hero design for Maria Nicola jewellery store" loading="lazy"></figure>
-    </a>
+    <div class="browser">
+      <div class="browser-bar"><i></i><i></i><i></i></div>
+      <div class="slider" aria-roledescription="carousel" aria-label="Maria Nicola website design">
+        <div class="slides">
+          <img src="assets/img/web-1.jpg" alt="Maria Nicola homepage hero: One necklace, ten ways to wear" loading="lazy">
+          <img src="assets/img/web-2.jpg" alt="Maria Nicola shop menu with collections and product types" loading="lazy">
+          <img src="assets/img/web-3.jpg" alt="Maria Nicola pearl collection page" loading="lazy">
+        </div>
+        <button class="slide-arrow prev" aria-label="Previous slide"></button>
+        <button class="slide-arrow next" aria-label="Next slide"></button>
+        <div class="slide-dots"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -174,59 +178,59 @@
       <div class="tg">
         <h4>AI Video Platforms</h4>
         <ul>
-          <li><i class="mono">Sy</i>Synthesia</li>
-          <li><i class="mono">ML</i>MagicLight</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/google.svg)"></i>Google Flow</li>
-          <li><i class="mono">H</i>Higgsfield</li>
+          <li><i class="tool-icon"><img src="assets/tools/synthesia.png" alt=""></i>Synthesia</li>
+          <li><i class="tool-icon"><img src="assets/tools/magiclight.png" alt=""></i>MagicLight</li>
+          <li><i class="tool-icon"><img src="assets/tools/googleflow.png" alt=""></i>Google Flow</li>
+          <li><i class="tool-icon"><img src="assets/tools/higgsfield.png" alt=""></i>Higgsfield</li>
         </ul>
       </div>
       <div class="tg">
         <h4>AI Assistants &amp; Workflow</h4>
         <ul>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg)"></i>ChatGPT</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg)"></i>Claude</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/claude.svg)"></i>Claude Code</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/googlegemini.svg)"></i>Gemini</li>
+          <li><i class="tool-icon"><img src="assets/tools/chatgpt.png" alt=""></i>ChatGPT</li>
+          <li><i class="tool-icon"><img src="assets/tools/claude.png" alt=""></i>Claude</li>
+          <li><i class="tool-icon"><img src="assets/tools/claude.png" alt=""></i>Claude Code</li>
+          <li><i class="tool-icon"><img src="assets/tools/gemini.png" alt=""></i>Gemini</li>
         </ul>
       </div>
       <div class="tg">
         <h4>AI Video &amp; Image Models</h4>
         <ul>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/google.svg)"></i>Veo</li>
-          <li><i class="mono">K</i>Kling</li>
-          <li><i class="mono">Sd</i>Seedance</li>
-          <li><i class="mono">OF</i>Omni Flash</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/googlegemini.svg)"></i>Nano Banana</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg)"></i>ChatGPT Images</li>
+          <li><i class="tool-icon"><img src="assets/tools/veo.png" alt=""></i>Veo</li>
+          <li><i class="tool-icon"><img src="assets/tools/kling.png" alt=""></i>Kling</li>
+          <li><i class="tool-icon"><img src="assets/tools/seedance.png" alt=""></i>Seedance</li>
+          <li><i class="tool-icon"><img src="assets/tools/gemini.png" alt=""></i>Omni Flash</li>
+          <li><i class="tool-icon"><img src="assets/tools/gemini.png" alt=""></i>Nano Banana</li>
+          <li><i class="tool-icon"><img src="assets/tools/chatgpt.png" alt=""></i>ChatGPT Images</li>
         </ul>
       </div>
       <div class="tg">
         <h4>Project &amp; Collaboration</h4>
         <ul>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/clickup.svg)"></i>ClickUp</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/asana.svg)"></i>Asana</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/trello.svg)"></i>Trello</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/notion.svg)"></i>Notion</li>
-          <li><i class="mono">F</i>Frame.io</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/loom.svg)"></i>Loom</li>
+          <li><i class="tool-icon"><img src="assets/tools/clickup.png" alt=""></i>ClickUp</li>
+          <li><i class="tool-icon"><img src="assets/tools/asana.svg" alt=""></i>Asana</li>
+          <li><i class="tool-icon"><img src="assets/tools/trello.png" alt=""></i>Trello</li>
+          <li><i class="tool-icon"><img src="assets/tools/notion.png" alt=""></i>Notion</li>
+          <li><i class="tool-icon"><img src="assets/tools/frameio.png" alt=""></i>Frame.io</li>
+          <li><i class="tool-icon"><img src="assets/tools/loom.png" alt=""></i>Loom</li>
         </ul>
       </div>
       <div class="tg">
         <h4>AI Audio &amp; Repurposing</h4>
         <ul>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/elevenlabs.svg)"></i>ElevenLabs</li>
-          <li><i class="mono">D</i>Descript</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/adobe.svg)"></i>Adobe Podcast</li>
-          <li><i class="mono">OC</i>Opus Clip</li>
+          <li><i class="tool-icon"><img src="assets/tools/elevenlabs.png" alt=""></i>ElevenLabs</li>
+          <li><i class="tool-icon"><img src="assets/tools/descript.png" alt=""></i>Descript</li>
+          <li><i class="tool-icon"><img src="assets/tools/adobepodcast.svg" alt=""></i>Adobe Podcast</li>
+          <li><i class="tool-icon"><img src="assets/tools/opusclip.png" alt=""></i>Opus Clip</li>
         </ul>
       </div>
       <div class="tg">
         <h4>Design &amp; Editing</h4>
         <ul>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/canva.svg)"></i>Canva</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/adobephotoshop.svg)"></i>Photoshop</li>
-          <li><i class="ico" style="--i:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/adobepremierepro.svg)"></i>Premiere Pro</li>
-          <li><i class="mono">Cc</i>CapCut</li>
+          <li><i class="tool-icon"><img src="assets/tools/canva.png" alt=""></i>Canva</li>
+          <li><i class="tool-icon"><img src="assets/tools/photoshop.svg" alt=""></i>Photoshop</li>
+          <li><i class="tool-icon"><img src="assets/tools/premiere.svg" alt=""></i>Premiere Pro</li>
+          <li><i class="tool-icon"><img src="assets/tools/capcut.png" alt=""></i>CapCut</li>
         </ul>
       </div>
     </div>
@@ -304,6 +308,36 @@
       video.play();
     });
     video.addEventListener("play", () => btn.hidden = true);
+  });
+
+  // Website slideshow: arrows, dots, and left/right swipe
+  document.querySelectorAll(".slider").forEach((slider) => {
+    const track = slider.querySelector(".slides");
+    const count = track.children.length;
+    const dots = slider.querySelector(".slide-dots");
+    let index = 0;
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement("button");
+      dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+      dot.addEventListener("click", () => go(i));
+      dots.appendChild(dot);
+    }
+    const go = (i) => {
+      index = (i + count) % count;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      [...dots.children].forEach((d, j) => d.classList.toggle("active", j === index));
+    };
+    slider.querySelector(".prev").addEventListener("click", () => go(index - 1));
+    slider.querySelector(".next").addEventListener("click", () => go(index + 1));
+    let startX = null;
+    slider.addEventListener("pointerdown", (e) => { startX = e.clientX; });
+    slider.addEventListener("pointerup", (e) => {
+      if (startX === null) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+      startX = null;
+    });
+    go(0);
   });
 
   // Burger menu: toggles the section list; closes on link click, outside click, or Escape
