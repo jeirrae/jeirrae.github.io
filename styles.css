@@ -260,9 +260,10 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
 
 /* About */
 .about { padding: 112px 0; }
-.about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 72px; align-items: center; }
+.about-grid { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: center; }
 /* Offset block behind the photo uses the same blue-to-navy gradient as the hero and contact card */
-.about-card { position: relative; }
+/* Photo is capped so it stays modest on every screen size */
+.about-card { position: relative; width: 100%; max-width: 340px; justify-self: center; }
 .about-card::before { content: ""; position: absolute; inset: 24px -24px -24px 24px; border-radius: 28px; background: linear-gradient(160deg, var(--blue), var(--navy)); }
 .portrait { position: relative; border-radius: 28px; background: var(--white); border: 1px solid var(--line); box-shadow: none; }
 .about-copy h3 { font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -.6px; margin-bottom: 20px; }
@@ -294,6 +295,8 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
 /* Responsive */
 @media (max-width: 960px) {
   .hero, .about-grid, .contact-card { grid-template-columns: 1fr; }
+  .about-grid { gap: 56px; }
+  .about-card { max-width: 300px; }
   .hero h1 { font-size: 46px; }
   .hero-visual { height: 520px; }
   .brand-row { flex-wrap: wrap; justify-content: center; gap: 32px 48px; height: auto; }
@@ -304,6 +307,7 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
   .contact-cta { justify-self: start; }
 }
 @media (max-width: 600px) {
+  .about-card { max-width: 240px; }
   .hero h1 { font-size: 38px; }
   h2 { font-size: 30px; }
   .blob { width: 85%; }
