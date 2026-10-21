@@ -147,6 +147,26 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
 .g3 { grid-template-columns: repeat(3, 1fr); }
 .g4 { grid-template-columns: repeat(4, 1fr); }
 .g6 { grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.r45 { aspect-ratio: 4 / 5; }
+
+/* Real media: videos and images fill their ratio box */
+.media { position: relative; margin: 0; border-radius: 18px; overflow: hidden; background: var(--navy); box-shadow: 0 20px 40px -28px rgba(1,4,64,.45); }
+.media img, .media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.media .play {
+  position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; border: 0; border-radius: 50%; cursor: pointer;
+  background: var(--white); box-shadow: 0 10px 24px -8px rgba(1,4,64,.4); transition: transform .2s;
+}
+.media .play:hover { transform: scale(1.08); }
+.media .play::after { content: ""; position: absolute; left: 26px; top: 21px; border-left: 17px solid var(--orange); border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
+.media.flat { border-radius: 0; box-shadow: none; }
+
+/* Certifications */
+.certs { padding: 0 0 112px; }
+.cert { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; box-shadow: 0 24px 48px -32px rgba(1,4,64,.35); }
+.cert img { display: block; width: 100%; border-radius: 12px; }
+.cert figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px 6px 4px; }
+.cert strong { font-family: "Poppins"; font-weight: 600; font-size: 16px; }
+.cert span { font-size: 14px; color: var(--muted); }
 .g6 .ph .img { width: 36px; height: 36px; }
 
 .browser { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 30px 60px -30px rgba(1,4,64,.3); }
@@ -251,5 +271,6 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
   .g4, .g6 { grid-template-columns: 1fr 1fr; }
   .ticks { grid-template-columns: 1fr 1fr; }
   .work-title { flex-direction: column; }
+  .cert figcaption { flex-direction: column; gap: 2px; }
   .footer { flex-direction: column; gap: 12px; }
 }
