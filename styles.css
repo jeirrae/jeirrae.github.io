@@ -131,6 +131,9 @@ a { color: inherit; text-decoration: none; }
 .brands { padding: 24px 0 96px; }
 h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px; }
 .brands h2 { margin-bottom: 48px; }
+/* Every section title: orange, centered, one size */
+.section-title { text-align: center; color: var(--orange); }
+.orange { color: var(--orange); }
 /* Logos are pre-colored one gray and trimmed. Each --h is tuned so the wordmark lettering
    reads at one size (like one font size); compact marks sit at both ends to keep the row
    symmetric, and every logo shares one center line. */
@@ -256,9 +259,10 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
 .tg .tool-icon img { width: 22px; height: 22px; object-fit: contain; border-radius: 5px; }
 
 /* About */
-.about { display: grid; grid-template-columns: 1fr 1.3fr; gap: 72px; align-items: center; padding: 112px 0; }
+.about { padding: 112px 0; }
+.about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 72px; align-items: center; }
 .portrait { border-radius: 28px; box-shadow: 24px 24px 0 var(--sky); background: var(--white); border: 1px solid var(--line); }
-.about-copy h2 { margin-bottom: 20px; }
+.about-copy h3 { font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -.6px; margin-bottom: 20px; }
 .about-copy p { color: var(--muted); margin-bottom: 16px; font-size: 16.5px; }
 .ticks { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
 .ticks li { position: relative; padding-left: 30px; font-weight: 500; font-size: 15px; }
@@ -286,7 +290,7 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
 
 /* Responsive */
 @media (max-width: 960px) {
-  .hero, .about, .contact-card { grid-template-columns: 1fr; }
+  .hero, .about-grid, .contact-card { grid-template-columns: 1fr; }
   .hero h1 { font-size: 46px; }
   .hero-visual { height: 520px; }
   .brand-row { flex-wrap: wrap; justify-content: center; gap: 32px 48px; height: auto; }
