@@ -4,7 +4,8 @@
   const ENDPOINT = "https://script.google.com/macros/s/AKfycbwW4gx11mxFhoE3gHcY3m0aVaV209cN8P99c4jVtW4d9a7UC5IttVcNydtowcE8eVQ7vQ/exec"; // Google Apps Script web app URL; tracking stays off while this is empty
 
   const store = (() => { try { return window.localStorage; } catch { return null; } })();
-  if (!ENDPOINT || location.protocol === "file:" || store?.getItem("pa_ignore") === "1") return;
+  if (!ENDPOINT || location.protocol === "file:") return;
+  if (store?.getItem("pa_ignore") === "1") { console.info("Portfolio Analytics: this browser is set not to be counted."); return; }
 
   const uid = () => (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
   let visitorId = store?.getItem("pa_visitor");
@@ -24,7 +25,7 @@
   const params = new URLSearchParams(location.search);
   const tag = params.get("from") || params.get("utm_source") || params.get("ref");
   const refHost = (() => { try { return document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, "") : ""; } catch { return ""; } })();
-  const KNOWN = [[/upwork/, "Upwork"], [/linkedin|lnkd\.in/, "LinkedIn"], [/facebook|fb\.com|fb\.me/, "Facebook"], [/instagram/, "Instagram"],
+  const KNOWN = [[/upwork/, "Upwork"], [/^olj$|onlinejobs/, "OnlineJobs.ph"], [/fiverr/, "Fiverr"], [/indeed/, "Indeed"], [/jobstreet/, "JobStreet"], [/kalibrr/, "Kalibrr"], [/linkedin|lnkd\.in/, "LinkedIn"], [/facebook|fb\.com|fb\.me/, "Facebook"], [/instagram/, "Instagram"],
     [/^t\.co$|twitter|^x\.com/, "X (Twitter)"], [/google\./, "Google"], [/bing\./, "Bing"], [/youtube|youtu\.be/, "YouTube"],
     [/whatsapp|wa\.me/, "WhatsApp"], [/canva/, "Canva"], [/github/, "GitHub"], [/mail\.|outlook/, "Email"]];
   const named = (s) => (KNOWN.find(([re]) => re.test(s.toLowerCase())) || [])[1];
