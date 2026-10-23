@@ -279,7 +279,38 @@ h2 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: -.8px;
 .contact { padding-bottom: 64px; }
 .contact-card {
   background: linear-gradient(160deg, var(--blue), var(--navy)); color: var(--white); border-radius: 32px; padding: 72px;
-  display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; position: relative;
+}
+
+/* Work with Me options */
+.contact-menu { position: relative; display: grid; }
+.contact-menu > .btn { border: 0; cursor: pointer; width: 100%; }
+.contact-options {
+  position: absolute; left: 0; right: 0; top: calc(100% + 10px); z-index: 30; padding: 8px;
+  display: grid; gap: 2px; background: var(--white); border-radius: 18px;
+  box-shadow: 0 24px 48px -16px rgba(1,4,64,.5);
+}
+.contact-options[hidden] { display: none; }
+.contact-options a, .contact-options button {
+  display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; border: 0; border-radius: 12px;
+  background: none; color: var(--blue); text-align: left; font: inherit; cursor: pointer;
+}
+.contact-options a:hover, .contact-options button:hover { background: #eef4fb; }
+.contact-options svg { flex: none; width: 22px; height: 22px; fill: none; stroke: var(--blue); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.contact-options span { display: flex; flex-direction: column; line-height: 1.3; }
+.contact-options strong { font-family: "Poppins"; font-weight: 600; font-size: 14.5px; }
+.contact-options small { font-size: 12.5px; color: var(--blue); opacity: .75; }
+
+/* Back-to-top button */
+.to-top {
+  position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 48px; height: 48px; border: 0; border-radius: 50%;
+  background: var(--blue); cursor: pointer; box-shadow: 0 10px 24px -8px rgba(1,4,64,.5);
+  opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .25s, transform .25s, visibility .25s;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top::before {
+  content: ""; position: absolute; inset: 0; margin: auto; width: 12px; height: 12px; translate: 0 3px;
+  border-top: 2.5px solid var(--white); border-left: 2.5px solid var(--white); rotate: 45deg;
 }
 .contact-copy h2 { margin-bottom: 14px; }
 .contact-copy > p { color: rgba(255,255,255,.75); margin-bottom: 28px; }

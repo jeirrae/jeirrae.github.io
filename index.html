@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -290,7 +290,23 @@
       </ul>
     </div>
     <div class="contact-cta">
-      <a href="mailto:jimbanaagjr@gmail.com" class="btn btn-orange">Work with Me</a>
+      <div class="contact-menu">
+        <button class="btn btn-orange" aria-expanded="false" aria-controls="contact-options">Work with Me</button>
+        <div class="contact-options" id="contact-options" hidden>
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jimbanaagjr@gmail.com&amp;su=Project%20inquiry" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>
+            <span><strong>Email me on Gmail</strong><small>Opens Gmail in your browser</small></span>
+          </a>
+          <a href="mailto:jimbanaagjr@gmail.com?subject=Project%20inquiry">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 8.5h8M8 11.5h5"/></svg>
+            <span><strong>Open my email app</strong><small>Mail, Outlook, or your default app</small></span>
+          </a>
+          <button type="button" class="wa-link">
+            <svg viewBox="0 0 24 24"><path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4.1A8 8 0 1 1 20 11.6z"/><path d="M9 8.5c0 3.5 2.6 6.5 6.5 6.5l1-1.6-2-1-1 .8a4.5 4.5 0 0 1-2.4-2.4l.8-1-1-2z"/></svg>
+            <span><strong>Message me on WhatsApp</strong><small>Opens WhatsApp</small></span>
+          </button>
+        </div>
+      </div>
       <a href="#work" class="btn btn-light">See My Work</a>
     </div>
   </div>
@@ -301,6 +317,8 @@
   <p>© 2026 Jim Jr Bana-ag · <span class="ai-text">AI</span> Content Creator</p>
   <nav><a href="#services">Services</a><a href="#work">Work</a><a href="#tools">Tools</a><a href="#contact">Contact</a></nav>
 </footer>
+
+<button class="to-top" aria-label="Back to top"></button>
 
 <script>
   // Play overlay: start the video with native controls, and pause any other video that is playing
@@ -349,6 +367,24 @@
     });
     go(0);
   });
+
+  // Work with Me options; the WhatsApp link is built on click so the number never appears on the page
+  const contactBtn = document.querySelector(".contact-menu > .btn");
+  const contactOptions = document.getElementById("contact-options");
+  const setContact = (open) => { contactOptions.hidden = !open; contactBtn.setAttribute("aria-expanded", open); };
+  contactBtn.addEventListener("click", (e) => { e.stopPropagation(); setContact(contactOptions.hidden); });
+  contactOptions.addEventListener("click", (e) => { if (e.target.closest("a, button")) setContact(false); });
+  document.addEventListener("click", (e) => { if (!contactOptions.hidden && !contactOptions.contains(e.target)) setContact(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setContact(false); });
+  document.querySelector(".wa-link").addEventListener("click", () => {
+    const n = ["63", "976", "522", "1175"].join("");
+    window.open(`https://wa.me/${n}?text=${encodeURIComponent("Hi Jr! I'd like to work with you.")}`, "_blank", "noopener");
+  });
+
+  // Back-to-top button appears once the hero has scrolled out of view
+  const toTop = document.querySelector(".to-top");
+  new IntersectionObserver(([e]) => toTop.classList.toggle("show", !e.isIntersecting)).observe(document.querySelector(".hero"));
+  toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
   // Burger menu: toggles the section list; closes on link click, outside click, or Escape
   const burger = document.querySelector(".burger");
